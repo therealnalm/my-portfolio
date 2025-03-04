@@ -7,9 +7,9 @@ function $$(selector, context = document) {
 
 let pages = [
   { url: "/", title: "Home" },
-  { url: "projects", title: "Projects" },
-  { url: "contact", title: "Contact Info" },
-  { url: "resume", title: "CV" },
+  { url: "'/projects", title: "Projects" },
+  { url: "/contact", title: "Contact Info" },
+  { url: "/resume", title: "CV" },
   {
     url: "https://github.com/therealnalm",
     title: "Github",
@@ -66,14 +66,3 @@ if (localStorage.colorScheme) {
   );
   select.value = localStorage.colorScheme;
 }
-
-// let navLinks = $$("nav a");
-// let currentLink = navLinks.find(
-//   (a) => a.host === location.host && a.pathname === location.pathname
-// );
-
-// let test = $$("*");
-// console.log(navLinks);
-// console.log(navLinks[0].pathname + "  " + location.pathname);
-
-// currentLink?.classList.add("current");
