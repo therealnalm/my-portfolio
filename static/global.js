@@ -7,9 +7,9 @@ function $$(selector, context = document) {
 
 let pages = [
   { url: ".", title: "Home" },
-  { url: "'/projects", title: "Projects" },
-  { url: "/contact", title: "Contact Info" },
-  { url: "/resume", title: "CV" },
+  { url: "projects", title: "Projects" },
+  { url: "contact", title: "Contact Info" },
+  { url: "resume", title: "CV" },
   {
     url: "https://github.com/therealnalm",
     title: "Github",
@@ -18,7 +18,6 @@ let pages = [
 
 let nav = document.createElement("nav");
 document.body.prepend(nav);
-
 document.body.insertAdjacentHTML(
   "afterbegin",
   `
