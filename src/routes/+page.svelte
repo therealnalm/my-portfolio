@@ -41,7 +41,7 @@
     <p class="error">Something went wrong: {error.message}</p>
   {/await}
 {:catch error}
-  <p class="error">Something went wrong: {error.message}</p> -->
+  <p class="error">Something went wrong: {error.message}</p>
 {/await}
 
     <img src="images/MG_2664.jpg" alt="Ben in Tux" />
