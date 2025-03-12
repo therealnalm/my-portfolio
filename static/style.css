@@ -31,7 +31,7 @@ li {
   display: contents;
 }
 
-nav {
+/* nav {
   display: flex;
   margin-bottom: 3ch;
   border-bottom: 1px solid oklch(80% 3% 200);
@@ -55,7 +55,7 @@ nav {
     font-weight: bold;
     border-bottom: 0.4em solid oklch(50% 1% 200/ 40%);
   }
-}
+} */
 
 input {
   font: inherit;
