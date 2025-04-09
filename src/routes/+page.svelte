@@ -1,6 +1,12 @@
 <script>
   import Project from "$lib/Project.svelte";
   import projects from "$lib/projects.json";
+  import { onMount } from "svelte";
+
+  let githubData = null;
+  let loading = true;
+  let error = null;
+
   let profileData = {
   ok: true,
   json: async () => ({
@@ -10,6 +16,16 @@
     public_gists: 100,
   }),
 };
+
+onMount(async() => {
+  try{
+    const response = await fetch("https://api.github.com/users/therealnalm");
+    githubData = await response.json();
+  } catch (err) {
+    error = err;
+  }
+  loading = false;
+})
 </script>  
 
 <svelte:head>
@@ -20,7 +36,7 @@
     <h1>Benjamin Sheres</h1>
     <p>Ben is a student at MIT currently enrolled in 6.C35</p>
 
-{#await fetch("https://api.github.com/users/therealnalm")}
+<!-- {#await fetch("https://api.github.com/users/therealnalm")}
 <p>Loading...</p>
 {:then profileData}
   {#await profileData.json()}
@@ -42,7 +58,26 @@
   {/await}
 {:catch error}
   <p class="error">Something went wrong: {error.message}</p>
-{/await}
+{/await} -->
+
+{#if loading}
+    <p>Loading...</p>
+{:else if error}
+    <p class="error">Something went wrong: {error.message}</p>
+{:else}
+    <section>
+        <h2>My GitHub Stats</h2>
+        <dl>
+            <dt>Followers</dt>
+            <dd>{githubData.followers}</dd>
+            <dt>Following</dt>
+            <dd>{githubData.following}</dd>
+            <dt>Public Repositories</dt>
+            <dd>{githubData.public_repos}</dd>
+        </dl>
+    </section>
+{/if}
+
 
     <img src="images/MG_2664.jpg" alt="Ben in Tux" />
 

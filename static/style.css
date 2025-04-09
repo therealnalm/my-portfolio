@@ -114,3 +114,23 @@ h2 {
   text-wrap: balance;
   text-align: center;
 }
+
+dl.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 4 equal-sized columns */
+  grid-template-rows: auto auto; /* 2 rows for <dt> and <dd> */
+  gap: 1rem; /* Optional gap between grid items */
+  background: oklch(50% 1% 200/ 40%);
+}
+
+dt.stats {
+  grid-column: span 1; /* Default behavior: place in first column */
+  grid-row: 1; /* Place all <dt> elements in the first row */
+  text-align: center;
+}
+
+dd.stats {
+  grid-column: span 1; /* Default behavior: place in first column */
+  grid-row: 2; /* Place all <dd> elements in the second row */
+  text-align: center;
+}

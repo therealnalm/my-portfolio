@@ -13,13 +13,14 @@
   { url: "./projects", title: "Projects" },
   { url: "./contact", title: "Contact Info" },
   { url: "./resume", title: "CV" },
+  { url: "./meta", title: "Meta"},
   {
     url: "https://github.com/therealnalm",
     title: "Github",
   },
   
     ]
-    console.log('we at current? ' + $page.route.id)
+    // console.log('we at current? ' + $page.route.id)
 </script>
 
 
